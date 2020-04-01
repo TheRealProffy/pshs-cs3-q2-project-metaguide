@@ -1,0 +1,280 @@
+/* CSS, About Page, Mobile Responsive */
+@media screen and (max-width: 1199px) and (orientation: portrait) {
+	/* Remove large-scale stuff. */
+	.large-scale {
+		display: none !important;
+	}
+	
+	/* Body */
+	body {
+		transition: 2s;
+	}
+	
+	/* Header */
+	header {
+		position: static;
+	}
+	
+	/* Header, Navigation Tab */
+	#navigation-tab {
+		height: 10vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	#title-header {
+		padding: 0;
+		font-size: 5.5vw;
+	}
+	
+	#nav-links-1.small-scale {
+		height: 100vh;
+		width: 100vw;
+		position: absolute;
+		top: -100vh;
+		display: grid !important;
+		grid-template-rows: repeat(4, 45fr) 20fr;
+		grid-template-columns: 100%;
+		background: #222;
+		z-index: 100;
+		transition: 1.5s;
+	}
+	
+	#nav-links-1.small-scale .link {
+		font-family: "League Spartan";
+		font-size: 10vw;
+		color: white;
+	}
+	
+	#nav-links-1.small-scale > .link:hover, #nav-links-1.small-scale > .link:active, #nav-links-1.small-scale > .link.current {
+		background: #FFFACD;
+		color: black;
+	}
+	
+	#nav-links-1.small-scale > .current:active {
+		background: #0087BD;
+		color: white;
+	}
+	
+	#nav-links-1.small-scale #title-header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: white;
+		font-family: "Roboto";
+		font-weight: bold;
+		color: black;
+	}
+	
+	#menu-bar.small-scale {
+		height: 12vw;
+		top: 12vw;
+		right: 2.4vw;
+		display: flex !important;
+		font-size: 24vw;
+	}
+	
+	/* Contact Container */
+	#contact-container {
+		transition: 2s;
+	}
+	
+	#contact-text-box {
+		width: 100%;
+		position: absolute;
+		top: 17vw;
+	}
+	
+	#contact-text-header {
+		font-size: 18vw;
+	}
+	
+	#contact-text-subheader {
+		margin-top: -5vw;
+		font-size: 5vw;
+	}
+	
+	#details-contact {
+		width: 100%;
+		position: absolute;
+		top: 48vw;
+	}
+	
+	.input * {
+		margin-top: 4vw;
+		padding: 1.4vw;
+		font-size: 4vw;
+	}
+	
+	textarea {
+		height: 50vw;
+	}
+	
+	#query-button {
+		width: 42vw;
+		margin-left: -21vw;
+		bottom: 36vw;
+	}
+	
+	#query-button input {
+		font-size: 5vw;
+	}
+	
+	#contact-alert {
+		height: 8vw;
+		width: 72.8vw;
+		bottom: 5.56vw;
+		left: 50%;
+		margin-left: -40vw;
+		padding: 3.6vw;
+		font-size: 6vw;
+	}
+	
+	#alert-body {
+		margin-left: 2vw;
+	}
+	
+	#alertCloseButton {
+		height: 11vw;
+		width: 11vw;
+		margin-top: -5.5vw;
+		font-size: 14vw;
+	}
+	
+	#contactCloseButton {
+		height: 9vw;
+		width: 9vw;
+		top: 1.4vw;
+		right: 1.4vw;
+		font-size: 17vw;
+	}
+	
+	/* Main */
+	main {
+		padding-top: 0;
+	}
+	
+	main > div {
+		padding: 28vw 7.246vw 1.2vw;
+	}
+	
+	.content-header {
+		height: 20vw;
+		width: 100vw;
+		top: 6vw;
+		left: 0;
+		margin-left: 0;
+		border-radius: 0;
+		padding: 1.2vw 0;
+		font-size: 15.46vw;
+	}
+	
+	.content-body {
+		font-size: 7vw;
+	}
+	
+	.content-paragraph {
+		margin: 1em 0;
+		text-indent: 1.5em;
+	}
+	
+	#content-picture {
+		height: 72.46vw;
+		width: 72.46vw;
+		padding: 4.83vw 0;
+	}
+	
+	#author-picture {
+		margin-left: calc(-50% - 2vw);
+		border: 2vw solid #0089BD;
+	}
+	
+	#author-picture:hover {
+		border: 2vw solid #0089BD;
+		transform: none;
+	}
+	
+	/* Footer */
+	footer {
+		height: 15vw;
+		position: static;
+		padding: 0;
+	}
+	
+	#major-details {
+		font-size: 5vw;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+	/* Header, Navigation Tab */
+	#title-header {
+		font-size: 4vw;
+	}
+	
+	/* Contact Container */
+	#contact-text-box {
+		top: 9.8vw;
+	}
+	
+	#details-contact {
+		top: 39vw;
+	}
+	
+	textarea {
+		height: 26vw;
+	}
+	
+	#query-button {
+		bottom: 26vw;
+	}
+	
+	#contact-alert {
+		height: 6.5vw;
+		width: 76vw;
+		bottom: 4vw;
+		padding: 2vw;
+		font-size: 5.2vw;
+	}
+	
+	#alert-body {
+		margin-left: 1.5vw;
+	}
+	
+	/* Main */
+	main > div {
+		padding: 15vw 8vw 2.6vw;
+	}
+	
+	.content-header {
+		height: 15.645vw;
+		width: 91vw;
+		left: 50%;
+		margin-left: -45.5vw;
+		border-radius: 3vw;
+		padding: 1.3vw 0;
+		font-size: 13.7vw;
+	}
+	
+	.content-body {
+		margin-top: 13vw;
+		font-size: 6vw;
+		text-indent: 0;
+	}
+	
+	#content-picture {
+		height: 65vw;
+		width: 65vw;
+		padding: 5.2vw 0;
+	}
+	
+	#author-picture {
+		margin-left: calc(-50% - 2.6vw);
+		border: 2.6vw solid #0089BD;
+	}
+	
+	#author-picture:hover {
+		border: 2.6vw solid #0089BD;
+	}
+}

@@ -1,0 +1,588 @@
+/* CSS, Splash Page */
+@font-face {
+	font-family: "Century Gothic";
+	src: url("../../Fonts/Century%20Gothic%20(Regular).ttf");
+}
+
+@font-face {
+	font-family: "Century Gothic Bold";
+	src: url("../../Fonts/Century%20Gothic%20(Bold).ttf");
+}
+
+@font-face {
+	font-family: "League Spartan";
+	src: url("../../Fonts/League%20Spartan%20(Bold).ttf");
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("../../Fonts/Montserrat%20(Regular).ttf");
+}
+
+@font-face {
+	font-family: "Montserrat Bold";
+	src: url("../../Fonts/Montserrat%20(Bold).ttf");
+}
+
+@font-face {
+	font-family: "Montserrat Extra Bold";
+	src: url("../../Fonts/Montserrat%20(Extra%20Bold).ttf");
+}
+
+@font-face {
+	font-family: "Playlist Script";
+	src: url("../../Fonts/Playlist%20Script.otf");
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../../Fonts/Roboto%20(Regular).ttf");
+}
+
+/* HTML */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+	position: relative;
+	top: 0;
+	margin: auto;
+	transition: 0.5s;
+}
+
+/* By default, these work on any landscape devices. */
+
+/* Header */
+header {
+	width: 100%;
+	position: fixed;
+	z-index: 40;
+}
+
+/* Header, Navigation Tab */
+#navigation-tab {
+	height: 4.4vw;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 4fr 3fr;
+	background: white;
+	font-family: "Roboto";
+	font-weight: bold;
+	color: black;
+	transition: 0.5s;
+}
+
+#nav-links {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	position: relative;
+}
+
+.link {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.1vw;
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+.link, #nav-links:hover .link:not(:hover) {
+	color: #D3D3D3;
+}
+
+.link.current {
+	color: #228B22;
+	cursor: default !important;
+}
+
+.link:hover {
+	color: black;
+	cursor: pointer;
+}
+
+#hoverline {
+	height: 0.3vw;
+	width: 25%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	background: #228B22;
+	transition: 1s;
+}
+
+#hoverline.animated {
+	background: blue;
+}
+
+#title-header {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 1.5vw;
+	font-size: 1.5vw;
+	cursor: default;
+}
+
+/* Header, Menu Bar */
+#menu-bar {
+	height: 4vw;
+	overflow: hidden;
+	position: absolute;
+	top: 5vw;
+	right: 0.7vw;
+	display: flex;
+	align-items: center;
+	font-family: "Roboto";
+	font-weight: bold;
+	font-size: 7.3vw;
+	color: white;
+	cursor: pointer;
+	z-index: 40;
+	transition: 0.5s;
+}
+
+#menu-bar:hover, #menu-bar.on {
+	color: #0087BD;
+}
+
+#menu-bar.on:hover {
+	color: white;
+}
+
+/* Main, Splash */
+#splash {
+	height: 70vh;
+	overflow: hidden;
+	border-bottom: 3.66vw solid #333;
+}
+
+.splash-bg-img {
+	background: black;
+}
+
+.splash-bg-img img {
+	opacity: 0.4;
+	transform: scale(1.1);
+	filter: blur(1.3vw);
+	width: 100%;
+}
+
+.splash-text {
+	width: 100%;
+	position: absolute;
+	top: 25vh;
+	display: flex;
+	flex-direction: column;
+	cursor: default;
+}
+
+#splash-header {
+	width: 60%;
+	margin: auto;
+	font-family: "League Spartan";
+	font-size: 4.4vw;
+	color: #99FFFF;
+	text-align: center;
+}
+
+#splash-body {
+	width: 100%;
+	font-family: "Montserrat Extra Bold";
+	font-size: 2.2vw;
+	color: white;
+	text-align: center;
+}
+
+/* Main, Navigation Slider */
+#container {
+	height: 44vw;
+	overflow: hidden;
+	position: relative;
+}
+
+.viewport {
+	width: 100%;
+}
+
+#slider {
+	width: 400%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	transition: 1.5s;
+	transition-delay: 0.75s;
+}
+
+.slide {
+	overflow: hidden;
+	background: black;
+}
+
+.slide img {
+	opacity: 0.8;
+	width: 100%;
+	filter: blur(1vw);
+	transform: scale(1.1);
+}
+
+.arrow {
+	width: 4vw;
+	height: 4vw;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	top: 18vw;
+	background: #111;
+	border-radius: 50%;
+	padding: 1.5vw;
+	font-family: "League Spartan";
+	font-size: 4vw;
+	color: white;
+	z-index: 30;
+	transition: 0.5s;
+}
+
+.arrow:hover {
+	background: white;
+	color: #111;
+	cursor: pointer;
+}
+
+#prev {
+	left: 0.7vw;
+}
+
+#next {
+	right: 0.7vw;
+}
+
+#carousel {
+	width: 100%;
+	position: absolute;
+	top: 1.5vw;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.round {
+	height: 2.2vw;
+	width: 2.2vw;
+	margin: 0 0.7vw;
+	border-radius: 50%;
+	border: 0.3vw solid white;
+	padding: 0.4vw;
+	transition: 0.5s;
+}
+
+.round:hover {
+	background: rgba(255, 255, 255, 0.6);
+	cursor: pointer;
+}
+
+.round.active {
+	background: white;
+}
+
+.round.active:hover {
+	cursor: default;
+}
+
+#slider-text {
+	width: 51vw;
+	height: 19vw;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin-top: -10vw;
+	margin-left: -25.5vw;
+	transition: 1s;
+}
+
+#slider-text * {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#slider-text > div {
+	cursor: default;
+}
+
+.slider-header {
+	height: 12vw;
+	font-family: "Playlist Script";
+	font-size: 9vw;
+	color: white;
+	text-transform: lowercase;
+	transition: 0.5s;
+}
+
+.slider-header:hover {
+	color: black !important;
+}
+
+#slider-splash-header.slider-header.w3schools:hover {
+	color: #BFFF00 !important;
+}
+
+#slider-splash-header.slider-header.css-tricks:hover {
+	color: #FFA500 !important;
+}
+
+#slider-splash-header.slider-header.cssref:hover, #slider-contact-header:hover {
+	color: #99FFFF !important;
+}
+
+.slider-subheader {
+	font-family: "Montserrat Bold";
+	font-size: 2.2vw;
+	color: white;
+}
+
+#slider-splash-subheader {
+	margin-top: -0.4vw;
+}
+
+#slider-posts-subheader {
+	margin-top: 0.7vw;
+}
+
+#slider-about-subheader, #slider-contact-subheader {
+	margin-top: -1.8vw;
+}
+
+.slider-button {
+	width: 14.6vw;
+	background: white;
+	margin: auto;
+	margin-top: 0.7vw;
+	border-radius: 0.7vw;
+	border: 0.4vw solid black;
+	padding: 0.4vw;
+	font-family: "Century Gothic Bold";
+	font-size: 1.46vw;
+	color: black;
+	letter-spacing: 0.15vw;
+	text-transform: uppercase;
+	text-decoration: none;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#slider-splash-link.w3schools:hover {
+	background: #003E2A;
+	color: white;
+}
+
+#slider-splash-link.css-tricks:hover {
+	background: #D44500;
+	color: white;
+}
+
+#slider-splash-link.cssref:hover, #slider-normal-link:hover {
+	background: #0087BD;
+	color: white;
+}
+
+#slider-contact-link:hover {
+	background: #444;
+	color: white;
+}
+
+/* Main, Contact Container */
+#contact-container {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	bottom: -100%;
+	background: rgba(12, 12, 12, 0.98);
+	z-index: 400;
+	cursor: default;
+	transition: 1.5s;
+}
+
+#contact-text-box > div {
+	display: flex;
+	justify-content: center;
+}
+
+#contact-text-header {
+	font-family: "Playlist Script";
+	font-size: 8vw;
+	color: white;
+	text-transform: lowercase;
+}
+
+#contact-text-subheader {
+	margin-top: -2.2vw;
+	font-family: "Montserrat Bold";
+	font-size: 2.2vw;
+	color: white;
+}
+
+#details-contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.input * {
+	width: 80vw;
+	border: none;
+	margin-top: 1.1vw;
+	padding: 0.7vw;
+	font-family: "Roboto";
+	font-size: 1.3vw;
+	transition: 0.5s;
+}
+
+.input *:hover {
+	background: #FFFFE0;
+}
+
+textarea {
+	height: 11vw;
+	resize: none;
+}
+
+#query-button {
+	width: 11vw;
+	position: absolute;
+	bottom: 8vw;
+	left: 50%;
+	margin-left: -5.5vw;
+}
+
+#query-button input {
+	width: 100%;
+	border-radius: 1.1vw;
+	padding: 0.6vw;
+	font-family: "Century Gothic Bold";
+	font-size: 1.46vw;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#query-button input:hover {
+	background: #0093AF;
+	color: white;
+}
+
+#query-button input:active {
+	background: #228B22;
+	color: white;
+}
+
+input:invalid {
+	background: #FF7F7F;
+}
+
+input, textarea {
+	border: none;
+	outline: none;
+}
+
+#contact-alert {
+	width: 36.6vw;
+	height: 2.2vw;
+	position: absolute;
+	bottom: 1.1vw;
+	left: 1.1vw;
+	display: flex;
+	align-items: center;
+	background: #0087BD;
+	padding: 1.1vw;
+	font-family: "Roboto";
+	font-size: 2vw;
+	color: white;
+}
+
+#alert-header {
+	font-weight: bold;
+}
+
+#alert-body {
+	margin-left: 0.7vw;
+}
+
+#alertCloseButton {
+	height: 3vw;
+	width: 3vw;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	right: 0.7vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -1.46vw;
+	font-family: "Century Gothic Bold";
+	font-size: 5.86vw;
+	transition: 0.5s;
+}
+
+#alertCloseButton:hover {
+	color: #111;
+	cursor: pointer;
+}
+
+#contactCloseButton {
+	height: 4vw;
+	width: 3.5vw;
+	overflow: hidden;
+	position: absolute;
+	top: 0.4vw;
+	right: 0.7vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Century Gothic Bold";
+	font-size: 7.3vw;
+	color: white;
+	transition: 0.5s;
+}
+
+#contactCloseButton:hover {
+	color: #ED1C24;
+	cursor: pointer;
+}
+
+/* Footer */
+footer {
+	position: fixed;
+	bottom: -5vw;
+	height: 3.66vw;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #111;
+	padding: 0.7vw 0;
+	color: white;
+	transition: 0.5s;
+}
+
+#major-details {
+	font-family: "Montserrat";
+	font-weight: bold;
+	font-size: 1.46vw;
+}
+
+#minor-details {
+	font-family: "Century Gothic";
+	font-size: 1.24vw;
+}
+
+/* Remove small-scale. */
+.small-scale {
+	display: none !important;
+}

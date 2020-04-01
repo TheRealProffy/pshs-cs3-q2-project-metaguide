@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="Styles/Posts.css" />
+		<link rel="stylesheet" type="text/css" href="Styles/Posts (Responsive).css" />
+		
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="../Assets/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../Assets/favicon-16x16.png">
+		<link rel="manifest" href="../Assets/site.webmanifest">
+		<link rel="mask-icon" href="../Assets/safari-pinned-tab.svg" color="#0093af">
+		<link rel="shortcut icon" href="../Assets/favicon.ico">
+		<meta name="msapplication-TileColor" content="#0093af">
+		<meta name="msapplication-config" content="../Assets/browserconfig.xml">
+		<meta name="theme-color" content="#0093af">
+		
+		<title> Posts | Coding Conundrum </title>
+	</head>
+	
+	<body class="expanded" id="body" onload="generateStuff()">		
+		<header onmousedown="return false">
+			<div id="navigation-tab">
+				<div id="title-header">
+					CS3 Metaguide: Coding Conundrum
+				</div>
+				
+				<!-- Links that direct to the slider. -->
+				
+				<div class="large-scale" id="nav-links">
+					<a href="../Home.html" class="link" onmouseenter="animateLine(this)" onmouseleave="resetLine()"> Home </a>
+					<a class="link current" onmouseenter="animateLine(this)" onmouseleave="resetLine()"> Posts </a>
+					<a href="About.html" class="link"onmouseenter="animateLine(this)" onmouseleave="resetLine()"> About </a>
+					<a class="link" onclick="summonContact()" onmouseenter="animateLine(this)" onmouseleave="resetLine()"> Contact </a>
+					
+					<div class="static" id="hoverline"></div>
+				</div>
+			</div>
+			
+			<div class="on large-scale" id="menu-bar" onclick="showOrHide()" title="The posts will shine after a period of time!">
+				&equiv;
+			</div>
+			
+			<div class="on small-scale" id="menu-bar" onclick="slideNav()">
+				&equiv;
+			</div>
+		</header>
+		
+		<div onmousedown="return false" class="small-scale" id="nav-links-1">
+			<a class="link" href="../Home.html"> Home </a>
+			<a class="link current" onclick="closeNav()"> Posts </a>
+			<a class="link" href="About.html"> About </a>
+			<a class="link" onclick="summonContact(false)"> Contact </a>
+			<div id="title-header">	CS3 Metaguide: Coding Conundrum	</div>
+		</div>
+		
+			
+		<div id="contact-container">
+			<div id="contact-text-box" onmousedown="return false">
+				<div id="contact-text-header">
+					Contact Section
+				</div>
+				
+				<div id="contact-text-subheader">
+					We would love to hear from you!
+				</div>
+			</div>
+			
+			<div id="details-contact">
+				<div class="input"> <input type="text" placeholder="Nickname"> </div>
+				<div class="input"> <input type="email" placeholder="E-mail Address"> </div>
+				<div class="input"> <textarea placeholder="Message/Question"></textarea> </div>
+			</div>
+			
+			<div id="query-button" onmousedown="return false"> <input type="submit" value="Send Query" onclick="summonAlert()"> </div>				
+			<div id="contactCloseButton" onclick="closeContact()" onmousedown="return false"> &times; </div>
+		</div>
+		
+		<main onmousedown="return false" onmouseleave="resetAutomation()">
+			<div class="post" id="display" onmouseenter="makeActive(0)" onmouseleave="makeInactive(0)">
+				<div class="post-bg-img">
+					<div class="bg-text">
+						<div class="bg-title"> display & position </div>
+						<div class="bg-subtitle"> properties </div>
+					</div>
+				</div>
+				
+				<div class="post-header">
+					Displaycement
+				</div>
+				
+				<div class="post-info">
+					A guide on properly using display as well as position because 
+					of displacement, bad puns, and their synergy. The post also 
+					discusses centering in both CSS properties.
+				</div>
+				
+				<div id="read-more" onclick="openPost(this)">
+					read more <span id="read-more-arrow"> &raquo; </span>
+				</div>
+			</div>
+			
+			<div class="post" id="transform" onmouseenter="makeActive(1)" onmouseleave="makeInactive(1)">
+				<div class="post-bg-img">
+					<div class="bg-text">
+						<div class="bg-title"> transform & filter </div>
+						<div class="bg-subtitle"> properties </div>
+					</div>
+				</div>
+				
+				<div class="post-header">
+					Lights! Camera! Filter!
+				</div>
+				
+				<div class="post-info">
+					Wondering on how you might filter some HTML elements or pictures?
+					Take a look at the guide and see how you might set elegance on
+					those!
+				</div>
+				
+				<div id="read-more" onclick="openPost(this)">
+					read more <span id="read-more-arrow"> &raquo; </span>
+				</div>
+			</div>
+			
+			<div class="post" id="pseudoclasses" onmouseenter="makeActive(2)" onmouseleave="makeInactive(2)">
+				<div class="post-bg-img">
+					<div class="bg-text">
+						<div class="bg-title"> pseudoclasses </div>
+						<div class="bg-subtitle"> good styling </div>
+					</div>
+				</div>
+				
+				<div class="post-header">
+					Pseu Do They!
+				</div>
+				
+				<div class="post-info">
+					If adding stuff to classes creates effects, so do pseudoclasses.
+					Learn how some pseudoclasses work and how to effectively synergize
+					them with certain elements.
+				</div>
+				
+				<div id="read-more" onclick="openPost(this)">
+					read more <span id="read-more-arrow"> &raquo; </span>
+				</div>
+			</div>
+			
+			<div class="post" id="events" onmouseenter="makeActive(3)" onmouseleave="makeInactive(3)">
+				<div class="post-bg-img">
+					<div class="bg-text">
+						<div class="bg-title"> events </div>
+						<div class="bg-subtitle"> javascript </div>
+					</div>
+				</div>
+				
+				<div class="post-header">
+					Something's Happening
+				</div>
+				
+				<div class="post-info">
+					Ever wondered how to create interaction on elements using
+					JavaScript? Take a peek and find your answers. (Or you
+					could go to W3Schools.)
+				</div>
+				
+				<div id="read-more" onclick="openPost(this)">
+					read more <span id="read-more-arrow"> &raquo; </span>
+				</div>
+			</div>
+			
+			<div class="post" id="append" onmouseenter="makeActive(4)" onmouseleave="makeInactive(4)"> 
+				<div class="post-bg-img">
+					<div class="bg-text">
+						<div class="bg-title"> appending </div>
+						<div class="bg-subtitle"> javascript </div>
+					</div>
+				</div>
+				
+				<div class="post-header">
+					Appending Addition
+				</div>
+				
+				<div class="post-info">
+					Learning how to append stuff to the site via JavaScript can be
+					a nifty and handy skill. To learn more, view this post (or,
+					again, get started by going back to the splash).
+				</div>
+				
+				<div id="read-more" onclick="openPost(this)">
+					read more <span id="read-more-arrow"> &raquo; </span>
+				</div>
+			</div>
+			
+			<div class="post" id="picturestyle" onmouseenter="makeActive(5)" onmouseleave="makeInactive(5)">
+				<div class="post-bg-img">
+					<div class="bg-text">
+						<div class="bg-title"> picture plight </div>
+						<div class="bg-subtitle"> good styling </div>
+					</div>
+				</div>
+				
+				<div class="post-header">
+					Picture Plight
+				</div>
+				
+				<div class="post-info">
+					Having trouble with pictures? You can say it's comPICated, right?
+					I'm out of bad puns so I'll stop. This post discusses
+					some tips on choosing the right images for your site.
+				</div>
+				
+				<div id="read-more" onclick="openPost(this)">
+					read more <span id="read-more-arrow"> &raquo; </span>
+				</div>
+			</div>
+		</main>
+		
+		<div id="post-content-background"> </div>
+		
+		<!----------------------------------------------------------------------------------------------------->
+		
+		<div class="post-content-container" id="post-display">
+			<div class="post-content-header" onmousedown="return false">
+				CSS: Display and Position
+			</div>
+			
+			<div class="post-content-subheader" onmousedown="return false">
+				Article: Displaycement
+			</div>
+			
+			<div class="post-content-body">
+				<div class="content-paragraph">
+					There are many, many valid values for the <span class="code css">display</span> property,
+					while there are at least six values possible for the <span class="code css">position</span> property.
+					However, I'll summarize them to the essential things you'll need to know!
+				</div>
+				
+				<div class="content-paragraph">				
+					One important component for web layouts is that there are four essential values for 
+					<span class="code css">display</span>. By default, all elements are set to 
+					<span class="code css">display: inline;</span> by default. However, the 
+					<span class="code html">&lt;div&gt;</span> tags created	in the document are automatically 
+					set to <span class="code css">display: block;</span>. 
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							<span class="code css">display: block;</span> is the default setting for the 
+							<span class="code html">&lt;div&gt;</span> tags. Elements possessing this property always start
+							a new line, unlike elements with <span class="code css">display: inline;</span> which always 
+							takes as much space on the same line as possible.
+						</li>
+
+						<li>
+							<span class="code css">display: flex;</span> follows a flexbox model: when its 
+							children-elements have no specified width or height, they will occupy as much space in the
+							viewport width or height (of your device) as possible, even compressing them so much.
+						</li>
+						
+						<li>
+							<span class="code css">display: grid;</span> much like the previous type follows a box (i.e.
+							grid model). However, unlike flexbox, you have an easier access to control the measurements
+							of the layout via rows and columns.
+						</li>
+						
+						<li>
+							<span class="code css">display: none;</span> removes the element from the site.
+							The website will act as if the element really wasn't there, in contrast to an element
+							set in <span class="code css">visibility: none;</span> where the element will not show
+							but still retains some position. That's how it is, sadly.
+						</li>
+					</ul>
+				</div>
+				
+				<div class="content-paragraph">
+					The other important component is the five essential values of the <span class="code css">position</span>
+					property. This gives you control over certain elements; with this property, you can decide whether
+					the element always sticks to the screen or fulfill the want of elements following some straight line.
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							<span class="code css">position: static;</span> is the default setting for all elements. This
+							is the only value of <span class="code css">position</span> that is not affected by the
+							<span class="code css">top</span>, <span class="code css">bottom</span>, 
+							<span class="code css">left</span>, and <span class="code css">right</span> properties, which
+							we'll collectively call positional properties.
+						</li>
+						
+						<li>
+							<span class="code css">position: fixed;</span> forces the element to be placed relative to
+							the viewport or what you can see on screen. Elements possessing this property will always
+							stick on screen even with all the scrolling action.
+						</li>
+						
+						<li>
+							<span class="code css">position: relative;</span> acts like <span class="code css">position: static;</span>
+							by default. However, it can be affected by the positional properties mentioned above. These properties
+							will nudge the element to some direction relative to its original location. For example, an object
+							having a relative position and <span class="code css">top: 10px;</span> will be found 10px below
+							its previous location.
+						</li>
+						
+						<li>
+							<span class="code css">position: absolute;</span> enables a position relative to a non-static ancestor
+							or parent element. If there are no such ancestors, then it will position relative to the document body.
+							For example, an object having an absolute position, no non-static ancestors (or no position was set), and
+							<span class="code css">left: 25px;</span> will be found 25px away from the left side of the document.
+						</li>
+						
+						<li>
+							<span class="code css">position: sticky;</span> will initially act like
+							<span class="code css">position: relative;</span> until a certain extent is reach via scrolling where
+							it acts like <span class="code css">position: fixed;</span>.
+						</li>
+					</ul>
+				</div>
+				
+				<div class="content-paragraph">
+					This may seem off-topic, but I'll discuss it anyway! How would we even center some objects with all these 
+					<span class="code css">display</span> and <span class="code css">position</span> properties in the equation?
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							With <span class="code css">display: flex;</span> as a setting, you can center its children-elements
+							by including <span class="code css">justify-content: center;</span> and
+							<span class="code css">align-items: center;</span>. Do note, that the default value is
+							<span class="code css">flex-direction: row;</span>, so <span class="code css">justify-content</span>
+							and <span class="code css">align-items</span> would work on an x-axis and y-axis, respectively. It
+							will work oppositely for <span class="code css">flex-direction: column;</span>.
+						</li>
+						
+						<li>
+							With <span class="code css">display: grid;</span> as a setting, use
+							<span class="code css">justify-items: center;</span> and <span class="code css">align-items: center;</span>.
+							It will center the children-elements along the x-axis and y-axis, respectively.
+						</li>
+						
+						<li>
+							For centering an object using <span class="code css">position: absolute;</span>, consider first if it's
+							going to be relative to a parent container or the whole site. By simply typing
+							<span class="code css">position: relative;</span> (or any non-static value) to some parent container,
+							you will force the target object to position relatively within the parent container. Then, 
+							<span class="code css">top: 50%;</span> and/or <span class="code css">left: 50%;</span>. Define some
+							width and height, and set the <span class="code css">margin-top</span> and/or 
+							<span class="code css">margin-left</span> to the negative half of the defined height and/or width, all
+							respectively. 
+						</li>
+					</ul>
+				</div>
+				
+				<div class="content-paragraph">
+					Whew, seems to be too much stuff for a first post! I recommend that you check out these references to learn more
+					about these wonderful and crucial properties.
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							<a href="https://www.w3schools.com/"> https://www.w3schools.com/ </a>
+						</li>
+						
+						<li>
+							<a href="https://css-tricks.com/"> https://css-tricks.com/ </a>
+						</li>
+						
+						<li>
+							<a href="https://developer.mozilla.org/"> https://developer.mozilla.org/ </a>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="closePostButton" onclick="closePost(this)" onmousedown="return false"> &times; </div>
+			</div>
+		</div>
+		
+		<!----------------------------------------------------------------------------------------------------->
+		
+		<div class="post-content-container" id="post-transform">
+			<div class="post-content-header" onmousedown="return false">
+				CSS: Transform and Filter
+			</div>
+			
+			<div class="post-content-subheader" onmousedown="return false">
+				Article: Lights! Camera! Filter
+			</div>
+			
+			<div class="post-content-body">
+				<div class="content-paragraph">
+					You must have already visited the Splash Page of this website. Did you come across a background image? The fact
+					is I didn't use the <span class="code css">background-image</span> property. If it was neat and you'd love to
+					know how it was made, keep scrolling!
+				</div>
+				
+				<div class="content-paragraph">
+					The visual effects you must have seen are the blur effect provided by the <span class="code css">filter</span>
+					property. While <span class="code css">filter</span> has several values, like <span class="code css">display</span>,
+					we'll go around four possible values. Do note that this is more commonly used for 
+					<span class="code html">&lt;img&gt;</span> elements.
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							<span class="code css">filter: blur(<b>&lt;length&gt;</b>);</span> adds a blur on the element. The length defines
+							"how many pixels blend into each other." Although the parameter is length, percentage values aren't accepted.
+							Also, if you use a small value for the length parameter (in pixels), and you zoomed out, the element will appear
+							as if it wasn't blurred. However, if you zoom in, the element appears to be more blurred. The blur effect is
+							good if you want to emphasize some text directly in front of the element (usually picture). It's also good if
+							you want to cast some mystery to the element. When you blur a picture, a margin of white is created. You'll know
+							later how to resolve it!
+						</li>
+						
+						<li>
+							<span class="code css">filter: grayscale(<b>&lt;percent&gt;</b>);</span> adds a gray effect (or black and white effect)
+							to the image. If you want a touch of 1900s to your pictures, try this out! If you want to add some memorial element
+							to that element, try this out. The percent determines how "gray" the picture is supposed to be. A value of 100% (or
+							1) means that the element is fully gray.
+						</li>
+						
+						<li>
+							<span class="code css">filter: invert(<b>&lt;percent&gt;</b>);</span> allows you to control how much of the colors of
+							the elementare inverted. A value of zero doesn't change the tone of the element, while a value of 100% (or 1) completely
+							inverts the element.
+						</li>
+						
+						<li>
+							<span class="code css">filter: opacity(<b>&lt;percent&gt;</b>);</span> adjusts the transparency of the element.
+							To be quite honest, the <span class="code css">opacity</span> is more frequently used. They have the same mechanics:
+							no negative values allowed, values are between zero and one. A value of zero means that the element cannot be seen
+							since it's totally transparent, though it's still in place according to the document file, unlike
+							<span class="code css">display: none;</span>. Use this if you want some "slightly better" transparency.
+						</li>
+					</ul>
+				</div>
+				
+				<div class="content-paragraph">
+					Now, as mentioned earlier, some margin of white appears if you use <span class="code css">filter: blur(<b>&lt;length&gt;</b>);</span>
+					on pictures. How do we resolve this? One way of effectively removing them is by using 
+					<span class="code css">transform: scale(<b>&lt;multiplier&gt;</b>)</span> on the element with the filter. There are more
+					values (and parameters) for the <span class="code css">transform</span> property; I'll give two examples and some of their
+					variations.
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							<span class="code css">transform: scale(<b>&lt;multiplier&gt;</b>)</span>, in simple terms, zooms the image. Without any
+							restrictions on the parent container where the element is, it can actually go over and overlap. An easy solution is to set
+							a <span class="code css">height</span> or <span class="code css">width</span> and add 
+							<span class="code css">overflow: hidden;</span> on the parent container. This <span class="code css">transform</span> value
+							is a shortcut to <span class="code css">scaleX</span> and <span class="code css">scaleY</span>. If two parameters are placed
+							instead of one for the <span class="code css"><b>&lt;multiplier&gt;</b></span>, the first parameter stretches the x-component of
+							the element, and the second parameter stretches the y-component.
+						</li>
+						
+						<li>
+							<span class="code css">transform: rotate(<b>&lt;angle&gt;</b>)</span> rotates the element along a 2D plane. The 
+							<span class="code css"><b>&lt;angle&gt;</b></span> unit could be in degrees (deg), turns, radians (rad), or gradians (grad). 
+							One full rotation is equal to <span class="code css">(<b>360deg</b>)</span>, 
+							<span class="code css">(<b>1turn</b>)</span>, <span class="code css">(<b>2&pi;rad</b>)</span>, or
+							<span class="code css">(<b>400grad</b>)</span>.
+						</li>
+					</ul>
+				</div>
+				
+				<div class="content-paragraph">
+					I found a demo for the <span class="code css">transform</span> property at 
+					<a href="https://developer.mozilla.org/en-US/docs/Web/CSS/transform">https://developer.mozilla.org/</a>! Also, do check out these links 
+					for a more expanded discussion on both of these properties.
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							<a href="https://www.w3schools.com/"> https://www.w3schools.com/ </a>
+						</li>
+						
+						<li>
+							<a href="https://css-tricks.com/"> https://css-tricks.com/ </a>
+						</li>
+						
+						<li>
+							<a href="https://developer.mozilla.org/"> https://developer.mozilla.org/ </a>
+						</li>
+						
+						<li>
+							<a href="https://html-css-js.com/css/generator/transform/"> https://html-css-js.com/ </a>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="closePostButton" onclick="closePost(this)" onmousedown="return false"> &times; </div>
+			</div>
+		</div>
+		
+		<!----------------------------------------------------------------------------------------------------->
+		
+		<div class="post-content-container" id="post-pseudoclasses">
+			<div class="post-content-header" onmousedown="return false">
+				CSS: Pseudoclasses
+			</div>
+			
+			<div class="post-content-subheader" onmousedown="return false">
+				Article: Pseu Do They!
+			</div>
+			
+			<div class="post-content-body">
+				<div class="content-paragraph">
+					When we make websites, we should usually aim to make it more interactive. This is where
+					pseudoclasses come in. We use pseudoclasses when we want to select some certain state
+					of an element, like when we hover or when we click it. We can also use them if we want
+					to select certain elements, especially when picking odd-numbered elements or the last
+					of the element within a container. Pseudoclasses are not really classes (hence the
+					prefix pseudo-) but they do function well as selectors.
+				</div>
+				
+				<div class="content-paragraph">
+					Let's first discuss pseudoclasses related to links or <span class="code html">&lt;a&gt;</span>
+					tags with <span class="code html">href</span> attribute as well as the special states of the
+					elements. This category is called dynamic pseudoclasses. There are four of them here.
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							The <span class="code css">:link</span> pseudoclass only selects the
+							<span class="code html">&lt;a href=<b>"[someClassName]"</b>&gt;</span>. This is useful
+							for targetting elements that may lead somewhere outside the document page (or even local
+							links, like <span class="code html">href=<b>#[someIdName]</b></span>).
+						</li>
+						
+						<li>
+							The <span class="code css">:visited</span> pseudoclass selects the 
+							<span class="code html">&lt;a&gt;</span> tags that have been clicked (specifically, visited) 
+							previously. Normally—hen there are no CSS associated with these
+							<span class="code html">&lt;a&gt;</span>—when links are clicked, the color changes from blue
+							to purple. 
+						</li>
+						
+						<li>
+							The <span class="code css">:active</span> pseudoclass selects the state of an element when
+							it is being clicked. This is most likely the second most used pseudoclass in this category. 
+						</li>
+						
+						<li>
+							The <span class="code css">:hover</span> pseudoclass selects the state of an element when the
+							cursor is directly above the element. Generally, this is the most used pseudoclass.
+						</li>
+					</ul>
+				</div>
+				
+				<div class="content-paragraph">
+					There is also another type of pseudoclasses called the structural pseudoclasses which select elements
+					relative to their order within a parent container. By default, the count goes from top to bottom, or
+					cascading (hence CSS). 
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							The <span class="code css">:first-child</span> selects the first of that certain class within
+							the parent container. In other words, it selects the top element (based on the coding of HTML)
+							with that class.
+						</li>
+						
+						<li>
+							The <span class="code css">:last-child</span> selects the bottom element with the said class.
+						</li>
+						
+						<li>
+							The <span class="code css">:nth-child(<b>[expression]</b>)</span> allows you to select elements
+							using an algebraic expression. This is best when you want to select elements systematically (or
+							for every nth element) or when you want to have different effects on odd and even. You can even
+							use it if you want to select the first n elements.
+						</li>
+						
+						<li>
+							The <span class="code css">:not()</span> selects the state that is not indicated within the
+							parenthesis. To make this clearer, putting <span class="code css">:not(:hover)</span> will
+							select the events wherein the element isn't hovered. 
+							<span class="code css">div:not(.active)</span> selects all the <span class="code html">&lt;div&gt;</span>
+							tags that do not have the class "active." This pseudoclass cannot be nested; 
+							<span class="code css">div:not(:not)</span> does not work!
+						</li>
+					</ul>
+				</div>
+				
+				<div class="content-paragraph">
+					Here are other CSS pseudoclasses you may find useful especially in using <span class="code html">&lt;input&gt;</span>
+					tags.
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							<span class="code css">:invalid</span> selects inputs that whose requirements are not met. For instance, an
+							input missing an '@' at the e-mail address input will be selected. This is usually good if you want to let your
+							audience know what is wrong with the input given.
+						</li>
+						
+						<li>
+							<span class="code css">:focus</span> is like an after-active effect. This is frequently used for elements requiring
+							input and you want your audience to keep track on what they are currently typing on.
+						</li>
+					</ul>
+				</div>
+				
+				<div class="content-paragraph">
+					With regards to synergizing these pseudoclasses with JavaScript, you can actually perform actions if there 
+					are more classes added to a certain element. With JavaScript, you can change the class name of an element using the
+					<span class="code js">.className</span> property. Remember, the styles applied on the element will depend on the
+					specificity. For instance, an element with <span class="code html">class="active round"</span> will have a yellow
+					background color under <span class="code css">.active.round</span> rather than the red background under
+					<span class="code css">.round</span> since the former was more specific.
+				</div>
+				
+				<div class="content-paragraph">
+					Thanks for reading! Here are the links for reference.
+				</div>
+				
+				<div class="content-paragraph">
+					<ul>
+						<li>
+							<a href="https://hackernoon.com/"> https://hackernoon.com/ </a>
+						</li>
+						
+						<li>
+							<a href="https://www.smashingmagazine.com/"> https://www.smashingmagazine.com/ </a>
+						</li>
+						
+						<li>
+							<a href="https://developer.mozilla.org/"> https://developer.mozilla.org/ </a>
+						</li>
+					</ul>
+				</div>
+				
+				<div id="closePostButton" onclick="closePost(this)" onmousedown="return false"> &times; </div>
+			</div>
+		</div>
+		
+		<!----------------------------------------------------------------------------------------------------->
+		
+		<div class="post-content-container" id="post-events">
+			<div class="post-content-header" onmousedown="return false">
+				JavaScript: Events
+			</div>
+			
+			<div class="post-content-subheader" onmousedown="return false">
+				Article: Something's Happening
+			</div>
+			
+			<div class="post-content-body">
+				<div class="content-paragraph">
+					Every time something happens, that's an event. Click an element, that's an event. Hover over
+					an element, that's an event. When you don't hover over an element, that's still an event.
+					Want something to happen when some event happens? This is where JavaScript comes in!
+				</div>
+				
+				<div class="content-paragraph">
+					Let's not use lists, this time. We'll go over through some of the most commonly used event
+					types. How the user triggers these event types is pretty much self-explanatory, so instead
+					we'll also go to the best examples on executing these events.
+				</div>
+				
+				<div class="content-paragraph">
+					The first type is <span class="code html">onclick</span>, undoubtedly one of the
+					most dynamic event types. This event is triggered when the user clicks on the element.
+					The perfect example for using this event type is using sliders, where the parameters are
+					numbers which affect how far from the left the slider goes. Oh, the format for
+					calling a function is <span class="code html">functionName(<b>[parameter]</b>)</span>.
+					That's it; <span class="code html">onclick</span> is so dynamic, it can be used for a lot
+					of many things.
+				</div>
+				
+				<div class="content-paragraph">
+					The second type is <span class="code html">onmouseenter</span>. This event functions a lot
+					like <span class="code css">:hover</span>, except that it only occurs once the cursor "enters"
+					an element. A more repetitive version of this event is <span class="code html">onmouseover</span>,
+					where every time you move the mouse within the element, the event occurs. Think of this event
+					as <span class="code html">onclick</span> without the need to click. Anyway, the gist of this is that
+					<span class="code html">onmouseenter</span> function acts like <span class="code css">:hover</span> and
+					is mostly useful when you want to create interactions like lighting up the navigation tab that corresponds
+					to the position of the cursor on the page.
+				</div>
+				
+				<div class="content-paragraph">
+					The third type is <span class="code html">onmouseleave</span> which is the opposite of
+					<span class="code html">onmouseenter</span>. The former works similarly to <span class="code html">onmouseout</span>,
+					which is the opposite to <span class="code html">onmouseover</span>. Think of both of the outgoing events
+					as <span class="code css">:not(:hover)</span>. Normally, when using these types, the effects revert to normalcy,
+					or not in hover-mode.
+				</div>
+				
+				<div class="content-paragraph">
+					The fourth type is <span class="code html">onload</span> which triggers actions when the document page is
+					completely done loading. I recommend using this if you want to randomly generate some content in your page
+					upon loading.
+				</div>
+				
+				<div class="content-paragraph">
+					The fifth and final type I'm going to discuss is <span class="code html">onbeforeunload</span>, which is mostly
+					used to warn the user before leaving the page and going to an outside link.
+				</div>
+				
+				<div class="content-paragraph">
+					There are many possibilities in using JavaScript events. Visit 
+					<a href="https://www.tutorialspoint.com/javascript/javascript_events.htm"> 
+					https://www.tutorialspoint.com/ </a> for more information about the topic.
+				</div>
+				
+				<div id="closePostButton" onclick="closePost(this)" onmousedown="return false"> &times; </div>
+			</div>
+		</div>
+		
+		<!----------------------------------------------------------------------------------------------------->
+		
+		<div class="post-content-container" id="post-append">
+			<div class="post-content-header" onmousedown="return false">
+				JavaScript: Appending
+			</div>
+			
+			<div class="post-content-subheader" onmousedown="return false">
+				Article: Appending Addition
+			</div>
+			
+			<div class="post-content-body">
+				<div class="content-paragraph">
+					Appending. Lowending. We name it! (Boo, the author sucks.)
+				</div>
+				
+				<div class="content-paragraph">
+					Appending is an action where you get to insert a usually newly-created element from JavaScript
+					to HTML. The format of appending is <span class="code js">parentContainer.append(child)</span>.
+					You can also replace the "parentContainer" part with <span class="code js">$(<b>[selector]</b>)</span>
+					to insert an element to another certain element without needing to create a variable getting a
+					certain ID. The format of the selector is similar to the way you target something in CSS. You
+					could have <span class="code css">div#active.round</span> as a selector.
+				</div>
+				
+				<div class="content-paragraph">
+					One way of using <span class="code js">append</span> is creating custom alerts. These alerts should
+					already have some sort of template by using CSS. You must also have another container with an id or
+					class although the former is more preferred. Using appending, we can insert the alert to that container.
+					We can also append some text to the container, although this is less used.
+				</div>
+				
+				<div class="content-paragraph">
+					Appending is a very useful for adding stuff while requiring interaction. Check this 
+					<a href="https://blog.devcenter.co/appending-in-javascript-via-jquery-d8e7544479e6"> link </a> for an 
+					in-depth info regarding <span class="code js">append</span>.
+				</div>
+				
+				<div id="closePostButton" onclick="closePost(this)" onmousedown="return false"> &times; </div>
+			</div>
+		</div>
+		
+		<!----------------------------------------------------------------------------------------------------->
+		
+		<div class="post-content-container" id="post-picturestyle">
+			<div class="post-content-header" onmousedown="return false">
+				Getting a Great (Pic)k
+			</div>
+			
+			<div class="post-content-subheader" onmousedown="return false">
+				Article: Picture Plight
+			</div>
+			
+			<div class="post-content-body">
+				<div class="content-paragraph">
+					Let's start with the cliché quote that pictures paint a thou- okay, that's too repetitive.
+					I guess I'll start discussing on getting good images straight away. However, there'll be
+					a catch when getting high-quality images though. Keep scrolling if you want to take the
+					small risk. (It's not really a risk since it's part of loading a website.)
+				</div>
+				
+				<div class="content-paragraph">
+					The best avenue to get good images, for a starting point, is Google Images. You can reliably
+					search images and even specify the quality of the picture you're looking more. You can even
+					specify if you're looking for "HD" pictures. I recommend using higher dimensions because,
+					from my experience, using image that display as large elements on website is more likely 
+					to provide high resolution. However, this applies more to wallpapers. If you can apply
+					that to other pictures that are non-wallpapers, it would still display an awesome effect.
+				</div>
+				
+				<div class="content-paragraph">
+					Getting relevant images is also key to a successful delivery of your website. Though, don't
+					stress too much on relevant and make your pictures match each other. Too much pictures of
+					the same topic can be boring and unoriginal. While too less doesn't provide much detail,
+					too much isn't good, either. 
+				</div>
+				
+				<div class="content-paragraph">
+					Lastly, in terms of file type, use JPGs for photographs and PNGs for graphics, that's it!
+					Hopefully, you'll find good pictures for your site. Sorry for the lack of pictures in these
+					articles since I really didn't find relevant images. Anyways, stay safe and healthy, guys!
+				</div>
+				
+				<div id="closePostButton" onclick="closePost(this)" onmousedown="return false"> &times; </div>
+			</div>
+		</div>
+		
+		<footer id="footer" onmousedown="return false">
+			<div id="major-details"> CS3 Q3 Project | Rb-14 | Sales, F.R.Q. </div>
+			<div class="large-scale" id="minor-details"> <!-- ??? --> </div>
+		</footer>
+		
+		<script type="text/javascript" src="Scripts/Posts.js"> </script>
+		
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158047871-1"> </script>
+		
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-158047871-1');
+		</script>
+	</body>
+</html>

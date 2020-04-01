@@ -1,0 +1,292 @@
+/* CSS, Splash Page, Mobile Responsive */
+@media screen and (max-width: 1199px) and (orientation: portrait) {
+	/* Remove large-scale stuff. */
+	.large-scale {
+		display: none !important;
+	}
+	
+	/* Body */
+	body {
+		transition: 2s;
+	}
+	
+	/* Header */
+	header {
+		position: static;
+	}
+	
+	/* Header, Navigation Tab */
+	#navigation-tab {
+		height: 10vw;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+	
+	#title-header {
+		padding: 0;
+		font-size: 5.5vw;
+	}
+	
+	#nav-links-1.small-scale {
+		height: 100vh;
+		width: 100vw;
+		position: absolute;
+		top: -100vh;
+		display: grid !important;
+		grid-template-rows: repeat(4, 45fr) 20fr;
+		grid-template-columns: 100%;
+		background: #222;
+		z-index: 100;
+		transition: 1.5s;
+	}
+	
+	#nav-links-1.small-scale .link {
+		font-family: "League Spartan";
+		font-size: 10vw;
+		color: white;
+	}
+	
+	#nav-links-1.small-scale > .link:hover, #nav-links-1.small-scale > .link:active, #nav-links-1.small-scale > .link.current {
+		background: #FFFACD;
+		color: black;
+	}
+	
+	#nav-links-1.small-scale > .current:active {
+		background: #0087BD;
+		color: white;
+	}
+	
+	#nav-links-1.small-scale #title-header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		background: white;
+		font-family: "Roboto";
+		font-weight: bold;
+		color: black;
+	}
+	
+	#menu-bar.small-scale {
+		height: 12vw;
+		top: 12vw;
+		right: 2.4vw;
+		display: flex !important;
+		font-size: 24vw;
+	}
+	
+	/* Main, Contact Container */
+	#contact-container {
+		transition: 2s;
+	}
+	
+	#contact-text-box {
+		width: 100%;
+		position: absolute;
+		top: 17vw;
+	}
+	
+	#contact-text-header {
+		font-size: 18vw;
+	}
+	
+	#contact-text-subheader {
+		margin-top: -5vw;
+		font-size: 5vw;
+	}
+	
+	#details-contact {
+		width: 100%;
+		position: absolute;
+		top: 48vw;
+	}
+	
+	.input * {
+		margin-top: 4vw;
+		padding: 1.4vw;
+		font-size: 4vw;
+	}
+	
+	textarea {
+		height: 50vw;
+	}
+	
+	#query-button {
+		width: 42vw;
+		margin-left: -21vw;
+		bottom: 36vw;
+	}
+	
+	#query-button input {
+		font-size: 5vw;
+	}
+	
+	#contact-alert {
+		height: 8vw;
+		width: 72.8vw;
+		bottom: 5.56vw;
+		left: 50%;
+		margin-left: -40vw;
+		padding: 3.6vw;
+		font-size: 6vw;
+	}
+	
+	#alert-body {
+		margin-left: 2vw;
+	}
+	
+	#alertCloseButton {
+		height: 11vw;
+		width: 11vw;
+		margin-top: -5.5vw;
+		font-size: 14vw;
+	}
+	
+	#contactCloseButton {
+		height: 9vw;
+		width: 9vw;
+		top: 1.4vw;
+		right: 1.4vw;
+		font-size: 17vw;
+	}
+	
+	/* Main, Splash */
+	.splash-text {
+		top: 28vh;
+	}
+	
+	.splash-bg-img img {
+		height: 100%;
+		width: auto;
+		filter: blur(4vw);
+	}
+	
+	#splash-header {
+		width: 95%;
+		font-size: 11vw;
+	}
+	
+	#splash-body {
+		width: 95%;
+		margin: auto;
+		margin-top: 3.6vw;
+		font-size: 6vw;
+	}
+	
+	/* Main, Navigation Slider */
+	#container {
+		height: 121vw;
+	}
+	
+	.slide img {
+		height: 100%;
+		width: auto;
+		filter: blur(3vw);
+	}
+	
+	.round {
+		border: 1.2vw solid white;
+		height: 7.25vw;
+		width: 7.25vw;
+	}
+	
+	#slider-text {
+		height: 42.3vw;
+		width: 96.6vw;
+		margin-top: -15vw;
+		margin-left: -48.3vw;
+	}
+	
+	.slider-header {
+		font-size: 16.9vw;
+	}
+	
+	.slider-subheader {
+		font-size: 4vw;
+		text-align: center;
+	}
+	
+	#slider-splash-subheader, #slider-posts-subheader {
+		margin-top: 5.56vw;
+	}
+	
+	#slider-about-subheader, #slider-contact-subheader {
+		margin-top: 2vw;
+	}
+	
+	.slider-button {
+		width: 43.5vw;
+		margin-top: 2.4vw;
+		border-radius: 1.2vw;
+		border: 0.8vw solid black;
+		padding: 0.8vw;
+		font-size: 4.35vw;
+		letter-spacing: 0.5vw;
+	}
+	
+	/* Footer */
+	footer {
+		height: 15vw;
+		position: static;
+		padding: 0;
+	}
+	
+	#major-details {
+		font-size: 5vw;
+	}
+}
+
+@media screen and (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+	/* Header, Navigation Tab */
+	#title-header {
+		font-size: 4vw;
+	}
+	
+	/* Main, Splash */ 
+	.splash-text {
+		top: 32.6vw;
+	}
+	
+	/* Main, Navigation Slider */
+	#slider-splash-subheader, #slider-posts-subheader {
+		margin-top: 6.5vw;
+	}
+	
+	#slider-about-subheader, #slider-contact-subheader {
+		margin-top: 2.6vw;
+	}
+	
+	.slider-button {
+		width: 40vw;
+		font-size: 4vw;
+	}
+	
+	/* Main, Contact Container */
+	#contact-text-box {
+		top: 9.8vw;
+	}
+	
+	#details-contact {
+		top: 39vw;
+	}
+	
+	textarea {
+		height: 26vw;
+	}
+	
+	#query-button {
+		bottom: 26vw;
+	}
+	
+	#contact-alert {
+		height: 6.5vw;
+		width: 76vw;
+		bottom: 4vw;
+		padding: 2vw;
+		font-size: 5.2vw;
+	}
+	
+	#alert-body {
+		margin-left: 1.5vw;
+	}
+}

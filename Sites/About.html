@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" type="text/css" href="Styles/About.css" />
+		<link rel="stylesheet" type="text/css" href="Styles/About (Responsive).css" />
+		
+		<!-- Favicon -->
+		<link rel="apple-touch-icon" sizes="180x180" href="../Assets/apple-touch-icon.png">
+		<link rel="icon" type="image/png" sizes="32x32" href="../Assets/favicon-32x32.png">
+		<link rel="icon" type="image/png" sizes="16x16" href="../Assets/favicon-16x16.png">
+		<link rel="manifest" href="../Assets/site.webmanifest">
+		<link rel="mask-icon" href="../Assets/safari-pinned-tab.svg" color="#0093af">
+		<link rel="shortcut icon" href="../Assets/favicon.ico">
+		<meta name="msapplication-TileColor" content="#0093af">
+		<meta name="msapplication-config" content="../Assets/browserconfig.xml">
+		<meta name="theme-color" content="#0093af">		
+		
+		<title> About | Coding Conundrum </title>
+	</head>
+	
+	<body class="expanded" id="body" onload="generateStuff()">		
+		<header onmousedown="return false">
+			<div id="navigation-tab">
+				<div id="title-header">
+					CS3 Metaguide: Coding Conundrum
+				</div>
+				
+				<!-- Links that direct to the slider. -->
+				
+				<div class="large-scale" id="nav-links">
+					<a href="../Home.html" class="link" onmouseenter="animateLine(this)" onmouseleave="resetLine()"> Home </a>
+					<a href="Posts.html" class="link" onmouseenter="animateLine(this)" onmouseleave="resetLine()"> Posts </a>
+					<a class="link current"onmouseenter="animateLine(this)" onmouseleave="resetLine()"> About </a>
+					<a class="link" onclick="summonContact()" onmouseenter="animateLine(this)" onmouseleave="resetLine()"> Contact </a>
+					
+					<div class="static" id="hoverline"></div>
+				</div>
+			</div>
+			
+			<div class="on large-scale" id="menu-bar" onclick="showOrHide()">
+				&equiv;
+			</div>
+			
+			<div class="on small-scale" id="menu-bar" onclick="slideNav()">
+				&equiv;
+			</div>
+		</header>
+		
+		<div onmousedown="return false" class="small-scale" id="nav-links-1">
+			<a class="link" href="../Home.html"> Home </a>
+			<a class="link" href="Posts.html"> Posts </a>
+			<a class="link current" onclick="closeNav()"> About </a>
+			<a class="link" onclick="summonContact(false)"> Contact </a>
+			<div id="title-header">	CS3 Metaguide: Coding Conundrum	</div>
+		</div>
+			
+		<div id="contact-container">
+			<div id="contact-text-box" onmousedown="return false">
+				<div id="contact-text-header">
+					Contact Section
+				</div>
+				
+				<div id="contact-text-subheader">
+					We would love to hear from you!
+				</div>
+			</div>
+			
+			<div id="details-contact">
+				<div class="input"> <input type="text" placeholder="Nickname"> </div>
+				<div class="input"> <input type="email" placeholder="E-mail Address"> </div>
+				<div class="input"> <textarea placeholder="Message/Question"></textarea> </div>
+			</div>
+			
+			<div id="query-button" onmousedown="return false"> <input type="submit" value="Send Query" onclick="summonAlert()"> </div>				
+			<div id="contactCloseButton" onclick="closeContact()" onmousedown="return false"> &times; </div>
+		</div>
+		
+		<main onmousedown="return false">
+			<div class="about-the-site">
+				<div class="content-header">
+					About the Site
+				</div>
+				
+				<div class="content-body">
+					<div class="content-paragraph">
+						Originally, I intended this website project to be a guide for creating a website project.
+						I figured out the mistakes in creating and publishing the first one. One of these is the
+						fact that it wasn't mobile-responsive since the text was also too small to read. I admit
+						the reason is because I didn't use pixels; instead, the site depended on the viewport width. 
+						If you are curious and you want to see the "Alpha Version" of this site, you may visit it 
+						here:
+						
+						<a class="outlink" href="https://therealproffy.github.io/pshs-cs3-q2-project-metaguide-alpha/Home.html">
+							CS3 Q2 Project Metaguide!
+						</a>
+					</div>
+					
+					<div class="content-paragraph">
+						I decided to reconstruct this site again for nine to ten days, including some new information
+						about JavaScript since I didn't include anything about it. 
+					</div>
+					
+					<div class="content-paragraph">
+						In this new issue of a website, I made it truly mobile-responsive. I also incorporated the scripts
+						now that they were also relevant in making these sites for Computer Science 3. I attempted to pour
+						in more effort than I did last time. I believe this time, it was designed better.
+					</div>
+					
+					<div class="content-paragraph">
+						Feel free to share this site if you've found the content here helpful. I'll try to update this site
+						whenever I can. If you have any queries, you can send them at my e-mail address: 
+						b2023frsales@pshs.edu.ph.
+					</div>
+				</div>
+			</div>
+			
+			<div class="about-the-author">
+				<div class="content-header">
+					About the Author
+				</div>
+				
+				<div class="content-body">
+					<div class="content-paragraph">
+						I think I can copy what I wrote and typed for the About Section in the previous website I made.
+					</div>
+					
+					<div id="content-picture">
+						<img id="author-picture" onclick="changePicture()" src="../Images/Author-Picture-A.jpg" />
+					</div>
+					
+					<div class="content-paragraph">
+						I'm Francis Raphael Q. Sales, a ninth-grader at Philippine Science High School (Main Campus). 
+						I am also a trained altar server for the church. I'm kinda inclined to swimming and badminton,
+						though I don't really excel at these stuff. I normally don't go with the flow or the trend, 
+						so I end up being kind of formal. I also tend to be reserved in telling stories, partly because
+						I think of my stories as mostly uninteresting and of little importance.
+					</div>
+					
+					<div class="content-paragraph">
+						I developed the hobby for coding stuff, like C++ and the three programming languages that make up 
+						these sites. It was actually fun working on the project. Stay safe and healthy! 
+					</div>
+					
+					<div class="content-paragraph">
+						If you've reach this point of the website, feel free to visit my other site: 
+						
+						<a class="outlink" href="https://therealproffy.github.io/pshs-bio1-q3-project/Project.html">
+							Guarding Our Guardians!
+						</a>
+						
+						It's my project for Biology 1; it explores briefly how the immune system works and what we can
+						do to fortify it. I've also added some minigame of mythbuster.
+					</div>
+				</div>
+			</div>
+		</main>
+		
+		<footer id="footer" onmousedown="return false">
+			<div id="major-details"> CS3 Q3 Project | Rb-14 | Sales, F.R.Q. </div>
+			<div class="large-scale" id="minor-details"> <!-- ??? --> </div>
+		</footer>
+		
+		<script type="text/javascript" src="Scripts/About.js"> </script>
+		
+		<!-- Global Site Tag (gtag.js) - Google Analytics -->
+		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-158047871-1"> </script>
+		
+		<script>
+			window.dataLayer = window.dataLayer || [];
+			function gtag(){dataLayer.push(arguments);}
+			gtag('js', new Date());
+			gtag('config', 'UA-158047871-1');
+		</script>
+	</body>
+</html>

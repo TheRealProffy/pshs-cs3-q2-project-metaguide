@@ -1,0 +1,631 @@
+/* CSS, Posts Page */
+@font-face {
+	font-family: "Century Gothic";
+	src: url("../../Fonts/Century%20Gothic%20(Regular).ttf");
+}
+
+@font-face {
+	font-family: "Century Gothic Bold";
+	src: url("../../Fonts/Century%20Gothic%20(Bold).ttf");
+}
+
+@font-face {
+	font-family: "Courier New";
+	src: url("../../Fonts/Courier%20New.ttf");
+}
+
+@font-face {
+	font-family: "League Spartan";
+	src: url("../../Fonts/League%20Spartan%20(Bold).ttf");
+}
+
+@font-face {
+	font-family: "Montserrat";
+	src: url("../../Fonts/Montserrat%20(Regular).ttf");
+}
+
+@font-face {
+	font-family: "Montserrat Bold";
+	src: url("../../Fonts/Montserrat%20(Bold).ttf");
+}
+
+@font-face {
+	font-family: "Oswald Bold";
+	src: url("../../Fonts/Oswald%20(Bold).ttf");
+}
+
+@font-face {
+	font-family: "Playlist Script";
+	src: url("../../Fonts/Playlist%20Script.otf");
+}
+
+@font-face {
+	font-family: "Roboto";
+	src: url("../../Fonts/Roboto%20(Regular).ttf");
+}
+
+/* HTML */
+html {
+	scroll-behavior: smooth;
+}
+
+/* Body */
+body {
+	position: relative;
+	top: 0;
+	margin: auto;
+	transition: 0.5s;
+}
+
+/* By default, these work on any landscape devices. */
+
+/* Header */
+header {
+	width: 100%;
+	position: fixed;
+	z-index: 40;
+}
+
+/* Header, Navigation Tab */
+#navigation-tab {
+	height: 4.4vw;
+	width: 100%;
+	display: grid;
+	grid-template-columns: 4fr 3fr;
+	background: white;
+	font-family: "Roboto";
+	font-weight: bold;
+	color: black;
+	transition: 0.5s;
+}
+
+#nav-links {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	position: relative;
+}
+
+.link {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.1vw;
+	text-decoration: none;
+	transition: 0.5s;
+}
+
+.link, #nav-links:hover .link:not(:hover) {
+	color: #D3D3D3;
+}
+
+.link.current {
+	color: #228B22;
+	cursor: default !important;
+}
+
+.link:hover {
+	color: black;
+	cursor: pointer;
+}
+
+#hoverline {
+	height: 0.3vw;
+	width: 25%;
+	position: absolute;
+	left: 25%;
+	bottom: 0;
+	background: #228B22;
+	transition: 1s;
+}
+
+#hoverline.animated {
+	background: blue;
+}
+
+#title-header {
+	height: 100%;
+	display: flex;
+	align-items: center;
+	padding-left: 1.5vw;
+	font-size: 1.5vw;
+	cursor: default;
+}
+
+/* Header, Menu Bar */
+#menu-bar {
+	height: 4vw;
+	overflow: hidden;
+	position: absolute;
+	top: 5vw;
+	right: 0.7vw;
+	display: flex;
+	align-items: center;
+	font-family: "Roboto";
+	font-weight: bold;
+	font-size: 7.3vw;
+	color: white;
+	cursor: pointer;
+	z-index: 40;
+	transition: 0.5s;
+}
+
+#menu-bar:hover, #menu-bar.on {
+	color: #FFD300;
+}
+
+#menu-bar.on.small-scale {
+	color: black;
+}
+
+#menu-bar.on:hover {
+	color: white;
+}
+
+/* Contact Container */
+#contact-container {
+	height: 100%;
+	width: 100%;
+	position: fixed;
+	bottom: -100%;
+	background: rgba(12, 12, 12, 0.98);
+	z-index: 400;
+	cursor: default;
+	transition: 1.5s;
+}
+
+#contact-text-box > div {
+	display: flex;
+	justify-content: center;
+}
+
+#contact-text-header {
+	font-family: "Playlist Script";
+	font-size: 8vw;
+	color: white;
+	text-transform: lowercase;
+}
+
+#contact-text-subheader {
+	margin-top: -2.2vw;
+	font-family: "Montserrat Bold";
+	font-size: 2.2vw;
+	color: white;
+}
+
+#details-contact {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.input * {
+	width: 80vw;
+	border: none;
+	margin-top: 1.1vw;
+	padding: 0.7vw;
+	font-family: "Roboto";
+	font-size: 1.3vw;
+	transition: 0.5s;
+}
+
+.input *:hover {
+	background: #FFFFE0;
+}
+
+textarea {
+	height: 11vw;
+	resize: none;
+}
+
+#query-button {
+	width: 11vw;
+	position: absolute;
+	bottom: 8vw;
+	left: 50%;
+	margin-left: -5.5vw;
+}
+
+#query-button input {
+	width: 100%;
+	border-radius: 1.1vw;
+	padding: 0.6vw;
+	font-family: "Century Gothic Bold";
+	font-size: 1.46vw;
+	text-transform: uppercase;
+	cursor: pointer;
+	transition: 0.5s;
+}
+
+#query-button input:hover {
+	background: #0093AF;
+	color: white;
+}
+
+#query-button input:active {
+	background: #228B22;
+	color: white;
+}
+
+input:invalid {
+	background: #FF7F7F;
+}
+
+input, textarea {
+	border: none;
+	outline: none;
+}
+
+#contact-alert {
+	width: 36.6vw;
+	height: 2.2vw;
+	position: absolute;
+	bottom: 1.1vw;
+	left: 1.1vw;
+	display: flex;
+	align-items: center;
+	background: #0087BD;
+	padding: 1.1vw;
+	font-family: "Roboto";
+	font-size: 2vw;
+	color: white;
+}
+
+#alert-header {
+	font-weight: bold;
+}
+
+#alert-body {
+	margin-left: 0.7vw;
+}
+
+#alertCloseButton {
+	height: 3vw;
+	width: 3vw;
+	overflow: hidden;
+	position: absolute;
+	top: 50%;
+	right: 0.7vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: -1.46vw;
+	font-family: "Century Gothic Bold";
+	font-size: 5.86vw;
+	transition: 0.5s;
+}
+
+#alertCloseButton:hover {
+	color: #111;
+	cursor: pointer;
+}
+
+#contactCloseButton {
+	height: 4vw;
+	width: 3.5vw;
+	overflow: hidden;
+	position: absolute;
+	top: 0.4vw;
+	right: 0.7vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: "Century Gothic Bold";
+	font-size: 7.3vw;
+	color: white;
+	transition: 0.5s;
+}
+
+#contactCloseButton:hover {
+	color: #ED1C24;
+	cursor: pointer;
+}
+
+/* Main */
+main {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	grid-gap: 0.7vw;
+	background: #444;
+	padding: 5.86vw 1.46vw 1.46vw;
+}
+
+.post {
+	height: 27.8vw;
+	max-width: 100%;
+	overflow: hidden;
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	background: #111;
+	border: 0.4vw solid white;
+	cursor: default;
+	transition: 0.5s;
+}
+
+.post.active {
+	opacity: 1 !important;
+}
+
+.post:not(:hover) {
+	opacity: 0.7;
+}
+
+.post-bg-img {
+	width: 100%;
+	height: 10vw;
+	overflow: hidden;
+	position: relative;
+	background:	linear-gradient(to right, #217EA3, #0087BD, #217EA3);	
+	border-bottom: 0.4vw solid white;
+	padding: 1.1vw;
+}
+
+#transform.post .post-bg-img {
+	background:	linear-gradient(to right, #FF7900, #FF5800, #FF7900);
+}
+
+#pseudoclasses.post .post-bg-img {
+	background:	linear-gradient(to right, #E60026, #E34234, #E60026);
+}
+
+#events.post .post-bg-img {
+	background: linear-gradient(to right, #337233, #228B22, #337233);	
+}
+
+#append.post .post-bg-img {
+	background: linear-gradient(to right, #EFCC00, #D6BC2B, #EFCC00); 
+}
+
+#picturestyle.post .post-bg-img {
+	background: linear-gradient(to right, #9F00C5, #9022AC, #9F00C5);
+}
+
+.bg-text {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	display: flex;
+	margin-top: -0.7vw;
+	text-align: center;
+}
+
+.bg-text > div {
+	width: 100%;
+}
+
+.bg-title {
+	height: 6.6vw;
+	position: absolute;
+	top: 50%;
+	margin-top: -3.3vw;
+	font-family: "Playlist Script";
+	font-size: 4.4vw;
+	color: rgba(0, 0, 0, 0.3);
+	text-transform: lowercase;
+}
+
+.bg-subtitle {
+	height: 3vw;
+	position: absolute;
+	top: 70%;
+	font-family: "League Spartan";
+	font-size: 2.2vw;
+	letter-spacing: 0.366vw;
+	color: white;
+	text-transform: uppercase;
+}
+
+.post-header {
+	padding: 0.6vw;
+	font-family: "Century Gothic Bold";
+	font-size: 1.83vw;
+	text-align: center;
+	color: white;
+}
+
+.post-info {
+	padding: 0.7vw;
+	font-family: "Roboto";
+	font-size: 1.1vw;
+	text-align: center;
+	color: white;
+}
+
+#read-more {
+	width: 8.78vw;
+	position: absolute;
+	left: 50%;
+	bottom: 1.83vw;
+	display: flex;
+	justify-content: center;
+	background: white;
+	margin-left: -5vw;
+	border: 0.366vw solid #DAA520;
+	padding: 0.366vw;
+	font-family: "Montserrat Bold";
+	font-size: 1.17vw;
+	color: black;
+	transition: 0.5s;
+}
+
+#read-more:hover {
+	background: #0087BD;
+	color: white;
+	cursor: pointer;
+}
+
+#read-more-arrow {
+	height: 1.46vw;
+	position: relative;
+	bottom: 0.22vw;
+	left: 0.3vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2.56vw;
+}
+
+/* Post Content Container */
+#post-content-background {
+	height: 100vh;
+	width: 100vw;
+	position: fixed;
+	top: 0;
+	left: -100vw;
+	background: black;
+	z-index: 300;
+	transition: 2s;
+}
+
+.post-content-container {
+	height: 85vh;
+	width: 95vw;
+	overflow: auto;
+	position: fixed;
+	top: 50%;
+	left: -100vw;
+	background: #F7F7F7;
+	margin-top: -42.5vh;
+	margin-left: -47.5vw;
+	cursor: default;
+	z-index: 300;
+	transition: 2s;
+}
+
+.post-content-header {
+	display: flex;
+	justify-content: center;
+	margin-top: 1.464vw;
+	font-family: "Oswald Bold";
+	font-size: 4.4vw;	
+	color: black;
+	text-align: center;
+}
+
+.post-content-subheader {
+	display: flex;
+	justify-content: center;
+	margin-top: -0.366vw;
+	font-family: "Montserrat";
+	font-size: 2.2vw;
+	color: black;
+	text-align: center;
+}
+
+.post-content-body {
+	padding: 2.2vw;
+	font-family: "Roboto";
+	font-size: 1.464vw;
+	line-height: 2em;
+	text-align: justify;
+}
+
+.code {
+	position: relative;
+	bottom: 0.1464vw;
+	background: #1F305E;
+	padding: 0.366vw;
+	font-family: "Courier New";
+	font-weight: bold;
+	transition: 0.5s;
+}
+
+.code:hover {
+	background: black;
+	color: white !important;
+}
+
+.code.css {
+	color: #ADD8E6;
+}
+
+.code.html {
+	color: #FF2400;
+}
+
+.code.js {
+	color: #FF7F00;
+}
+
+.content-paragraph {
+	margin: 1.2em 0;
+}
+
+.content-paragraph img {
+	width: 100%;
+}
+
+li {
+	margin: 0.9em 0;
+}
+
+b {
+	color: #FFEF00;
+}
+
+.post-content-body a {
+	text-decoration: none;
+	color: #FF5800;
+	transition: 0.5s;
+}
+
+.post-content-body a:hover {
+	color: #71BC78;
+}
+
+#closePostButton {
+	width: 5.7vw;
+	height: 5.3vw;
+	overflow: hidden;
+	position: absolute;
+	top: 0.73vw;
+	right: 0.73vw;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	font-family: "Century Gothic Bold";
+	font-size: 10vw;
+	color: black;
+	text-transform: uppercase;
+	transition: 0.5s;
+}
+
+#closePostButton:hover  {
+	color: #F2003C;
+	cursor: pointer;
+}
+
+/* Footer */
+footer {
+	position: fixed;
+	bottom: -5vw;
+	height: 3.66vw;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background: #111;
+	padding: 0.7vw 0;
+	color: white;
+	transition: 0.5s;
+}
+
+#major-details {
+	font-family: "Montserrat";
+	font-weight: bold;
+	font-size: 1.46vw;
+}
+
+#minor-details {
+	font-family: "Century Gothic";
+	font-size: 1.24vw;
+}
+
+/* Remove small-scale. */
+.small-scale {
+	display: none !important;
+}
