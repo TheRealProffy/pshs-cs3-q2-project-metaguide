@@ -1,2 +1,2 @@
-# pshs-cs3-q2-project-metaguide
+# PSHS: CS3 Q3 Project
 The revised version of the repository! 
